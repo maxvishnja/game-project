@@ -1,5 +1,7 @@
-#Steps
-#1. composer update
-#2. php artisan migrate
-#3. php artisan db:seed
-# Super admin username admin@admin.com   password admin2019
+###Steps
+* `composer update`
+* `php artisan migrate`
+* `php artisan db:seed`
+* Super admin: 
+* admin@admin.com   
+* admin2019
