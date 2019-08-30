@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'password', 'phone', 'link', 'link_expired', 'email', 'type'
     ];
 
     /**
@@ -24,6 +24,26 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'emails'
     ];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function results()
+    {
+        return $this->hasMany(Result::class);
+    }
+
+    /**
+     * Check if user Admin
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return $this->type == 'admin';
+    }
+
+
 }

@@ -11,7 +11,12 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/manifest.js') }}" defer></script>
+    <script src="{{ asset('js/vendor.js') }}" defer></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="{{ asset('js/main.js') }}" defer></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -69,6 +74,11 @@
         </nav>
 
         <main class="py-4">
+            @if( session('success') )
+                <div class="alert alert-success">
+                    {!! session('success') !!}
+                </div>
+            @endif
             @yield('content')
         </main>
     </div>
