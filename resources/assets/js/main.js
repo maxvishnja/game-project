@@ -4,7 +4,6 @@ $(document).ready(function () {
 
 $('.calc-btn').on('click', function (e) {
     e.preventDefault();
-    $('.history').html('');
     $.ajax({
         type: 'POST',
         url: '/calculated',
